@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <p>Ingrese valor neto: <input type="text" id="neto" name="neto"> </p>
+        <p>Ingrese el IVA: <input type="text" id="iva" name="iva"> </p>
+
+        <button onclick="impuesto()">Calcular valor total</button>
+        <p id="resultado">Resultado: </p>
+  
+    <script type="text/javascript">
+
+        function impuesto () {
+
+        let neto = document.getElementById("neto").value;
+        let iva= document.getElementById("iva").value;
+        let nneto = parseInt(neto, 10);
+        let iiva = parseInt(iva, 10);
+        let ivaredux= iiva/100;
+        
+        let combi= ivaredux*nneto;
+    
+        let total= combi+nneto;
+           
+        document.getElementById("resultado").innerHTML= "El IVA calculado por lo ingresado a pagar es" + " " + total;
+        }
+    </script>
+
+</body>
+</html>
